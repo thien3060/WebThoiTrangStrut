@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="contact" class="com.action.ContactAction" method="execute">
+            <result name="success">/pages/contact.jsp</result>
+        </action>
+    </package>
+
+    <package name="users" namespace="/users" extends="struts-default">
+        <action name="login" class="com.action.LoginAction" method="execute">
+            <result name="success">/pages/login.jsp</result>
+        </action>
+        <action name="register" class="com.action.RegisterAction">
+            <result name="success">/pages/login.jsp</result>
+        </action>
+    </package>
+
+    <package name="products" extends="struts-default" namespace="/products">
+        <action name="new_products" class="com.action.ProductAction" method="execute">
+            <result name="success">/pages/new_products.jsp</result>
+        </action>
+        <action name="products_list" class="com.action.ProductAction" method="productsList">
+            <result name="success">/pages/products_list.jsp</result>
+        </action>
+    </package>
+
+    <package name="orders" extends="struts-default" namespace="/orders">
+        <action name="view_cart" class="com.action.ViewCartAction">
+            <result name="success">/pages/cart.jsp</result>
+        </action>
+        <action name="checkout" class="com.action.CheckoutAction">
+            <result name="success">/pages/checkout.jsp</result>
+        </action>
+    </package>
+
+    <package name="serveAll" extends="struts-default">
+        <action name="*">
+            <result>/pages/error/404.jsp</result>
+        </action>
+    </package>
+</struts>
