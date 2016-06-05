@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WebThoiTrangStrut
 Source/out/artifacts/WebTrangPhuc_war_exploded/images/home/Thumbs.db
 Source/out/artifacts/WebTrangPhuc_war_exploded/images/home/Thumbs.db
@@ -7,3 +8,19 @@ Source/web/images/home/Thumbs.db
 Source/web/images/product-details/Thumbs.db
 Source/web/images/shop/Thumbs.db
 
+=======
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+/.idea
+>>>>>>> e026788d3a621c75b337861995b0c954c4ff15d3
