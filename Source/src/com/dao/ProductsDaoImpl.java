@@ -54,4 +54,11 @@ public class ProductsDaoImpl implements ProductsDao {
         Criteria criteria = session.createCriteria(Products.class);
         return (List<Products>) criteria.list();
     }
+
+    public List<Products> getProductsByName(String keyword) {
+
+        session.beginTransaction();
+        Criteria criteria = session.createCriteria(Products.class);
+        return (List<Products>) criteria.list();
+    }
 }

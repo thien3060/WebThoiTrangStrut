@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <t:genericpage>
     <jsp:attribute name="page_title">
@@ -18,7 +19,7 @@
             <div class="container">
                 <div class="breadcrumbs">
                     <ol class="breadcrumb">
-                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="index.jsp">Trang chủ</a></li>
                         <li class="active">:Giỏ hàng</li>
                     </ol>
                 </div>
@@ -35,85 +36,93 @@
                         </tr>
                         </thead>
                         <tbody>
+                    <s:iterator value="products" var="product">
                         <tr>
-                            <td class="cart_product">
-                                <a href=""><img src="images/cart/one.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Đầm bó</a></h4>
-                                <p>Mã số: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>300.000</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                           autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">300.000</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
+                            <td><s:property value="productID"/></td>
+                            <td><s:property value="productName"/></td>
+                            <td><s:property value="price"/></td>
+                            <td><a href="addToCart?newProductID=<s:property value="id"/>"></a></td>
                         </tr>
+                        <%--<tr>--%>
+                            <%--<td class="cart_product">--%>
+                                <%--<a href=""><img src="images/cart/one.png" alt=""></a>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_description">--%>
+                                <%--<h4><a href="">Đầm bó</a></h4>--%>
+                                <%--<p>Mã số: 1089772</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_price">--%>
+                                <%--<p>300.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_quantity">--%>
+                                <%--<div class="cart_quantity_button">--%>
+                                    <%--<a class="cart_quantity_up" href=""> + </a>--%>
+                                    <%--<input class="cart_quantity_input" type="text" name="quantity" value="1"--%>
+                                           <%--autocomplete="off" size="2">--%>
+                                    <%--<a class="cart_quantity_down" href=""> - </a>--%>
+                                <%--</div>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_total">--%>
+                                <%--<p class="cart_total_price">300.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_delete">--%>
+                                <%--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
 
-                        <tr>
-                            <td class="cart_product">
-                                <a href=""><img src="images/cart/two.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Áo sơ mi nữ</a></h4>
-                                <p>Mã số: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>500.000</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                           autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">500.000</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="cart_product">
-                                <a href=""><img src="images/cart/three.png" alt=""></a>
-                            </td>
-                            <td class="cart_description">
-                                <h4><a href="">Đầm ngắn</a></h4>
-                                <p>Mã số: 1089772</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>400.000</p>
-                            </td>
-                            <td class="cart_quantity">
-                                <div class="cart_quantity_button">
-                                    <a class="cart_quantity_up" href=""> + </a>
-                                    <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                           autocomplete="off" size="2">
-                                    <a class="cart_quantity_down" href=""> - </a>
-                                </div>
-                            </td>
-                            <td class="cart_total">
-                                <p class="cart_total_price">400.000</p>
-                            </td>
-                            <td class="cart_delete">
-                                <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                            </td>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--<td class="cart_product">--%>
+                                <%--<a href=""><img src="images/cart/two.png" alt=""></a>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_description">--%>
+                                <%--<h4><a href="">Áo sơ mi nữ</a></h4>--%>
+                                <%--<p>Mã số: 1089772</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_price">--%>
+                                <%--<p>500.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_quantity">--%>
+                                <%--<div class="cart_quantity_button">--%>
+                                    <%--<a class="cart_quantity_up" href=""> + </a>--%>
+                                    <%--<input class="cart_quantity_input" type="text" name="quantity" value="1"--%>
+                                           <%--autocomplete="off" size="2">--%>
+                                    <%--<a class="cart_quantity_down" href=""> - </a>--%>
+                                <%--</div>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_total">--%>
+                                <%--<p class="cart_total_price">500.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_delete">--%>
+                                <%--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                        <%--<tr>--%>
+                            <%--<td class="cart_product">--%>
+                                <%--<a href=""><img src="images/cart/three.png" alt=""></a>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_description">--%>
+                                <%--<h4><a href="">Đầm ngắn</a></h4>--%>
+                                <%--<p>Mã số: 1089772</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_price">--%>
+                                <%--<p>400.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_quantity">--%>
+                                <%--<div class="cart_quantity_button">--%>
+                                    <%--<a class="cart_quantity_up" href=""> + </a>--%>
+                                    <%--<input class="cart_quantity_input" type="text" name="quantity" value="1"--%>
+                                           <%--autocomplete="off" size="2">--%>
+                                    <%--<a class="cart_quantity_down" href=""> - </a>--%>
+                                <%--</div>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_total">--%>
+                                <%--<p class="cart_total_price">400.000</p>--%>
+                            <%--</td>--%>
+                            <%--<td class="cart_delete">--%>
+                                <%--<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>--%>
+                            <%--</td>--%>
+                        <%--</tr>--%>
+                     </s:iterator>
                         </tbody>
                     </table>
                 </div>

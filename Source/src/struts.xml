@@ -42,9 +42,21 @@
     </package>
 
     <package name="orders" extends="struts-default" namespace="/orders">
-        <action name="view_cart" class="com.action.ViewCartAction">
-            <result name="success">/pages/cart.jsp</result>
+        <!--<action name="view_cart" class="com.action.ViewCartAction">-->
+            <!--<result name="success">/pages/cart.jsp</result>-->
+        <!--</action>-->
+
+
+        <action name="productlist" class="com.action.ProductList">
+            <result name="success" >/pages/index.jsp</result>
         </action>
+        <action name="addToCart" class="com.action.AddProductToCart">
+            <result name="success" type="redirect">/pages/cart.jsp</result>
+        </action>
+        <action name="viewCart" class="com.action.ViewCartAction">
+            <result name="success" >/pages/cart.jsp</result>
+        </action>
+
         <action name="checkout" class="com.action.CheckoutAction">
             <result name="success">/pages/checkout.jsp</result>
         </action>

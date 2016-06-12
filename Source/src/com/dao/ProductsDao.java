@@ -17,4 +17,6 @@ public interface ProductsDao {
     void updateProducts(Products product);
 
     List<Products> findAllProducts();
+
+    List<Products> getProductsByName(String keyword);
 }
