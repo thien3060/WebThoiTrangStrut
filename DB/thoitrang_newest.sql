@@ -25,6 +25,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `blog`
 --
+create database thoitrang;
+use thoitrang;
 
 CREATE TABLE `blog` (
   `blogID` int(11) NOT NULL,
